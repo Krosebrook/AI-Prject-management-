@@ -24,6 +24,10 @@ import {setGlobalOptions} from "firebase-functions";
 // this will be the maximum concurrent request count.
 setGlobalOptions({maxInstances: 10});
 
+// Export your GenKit function
+export {menuSuggestion} from "./genkit-sample";
+
+// Example HTTP function (uncomment to use)
 // export const helloWorld = onRequest((request, response) => {
 //   logger.info("Hello logs!", {structuredData: true});
 //   response.send("Hello from Firebase!");
