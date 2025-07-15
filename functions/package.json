@@ -19,8 +19,7 @@
   },
   "main": "lib/index.js",
   "dependencies": {
-    "@genkit-ai/firebase": "^1.14.1",
-    "@genkit-ai/vertexai": "^1.14.1",
+    "@google-cloud/aiplatform": "^4.3.0",
     "express": "^5.1.0",
     "firebase": "^11.10.0",
     "firebase-admin": "^12.6.0",
