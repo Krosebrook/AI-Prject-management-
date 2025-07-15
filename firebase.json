@@ -21,10 +21,8 @@
         "firebase-debug.*.log",
         "functions"
       ]
-<<<<<<< HEAD
     }
   ]
-=======
     },
     {
       "backendId": "studio",
@@ -186,5 +184,5 @@
   "database": {
     "rules": "database.rules.json"
   }
->>>>>>> c688649 (codelab stastarting point)
+
 }
