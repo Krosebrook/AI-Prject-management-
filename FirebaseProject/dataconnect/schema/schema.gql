@@ -1,0 +1,60 @@
+type User @table {
+  email: String!
+  passwordHash: String!
+  displayName: String!
+  createdAt: Timestamp!
+  photoUrl: String
+  shippingAddress: String
+  role: String
+}
+
+type Store @table {
+  name: String!
+  owner: User!
+  createdAt: Timestamp!
+  description: String
+  imageUrl: String
+}
+
+type Product @table {
+  name: String!
+  price: Float!
+  stockQuantity: Int!
+  store: Store!
+  createdAt: Timestamp!
+  description: String
+  imageUrl: String
+  category: String
+}
+
+type CartItem @table(key: ["user", "product"]) {
+  user: User!
+  product: Product!
+  quantity: Int!
+  createdAt: Timestamp!
+}
+
+type Order @table {
+  user: User!
+  orderDate: Timestamp!
+  totalAmount: Float!
+  status: String!
+  createdAt: Timestamp!
+  shippingAddress: String
+  paymentMethod: String
+}
+
+type OrderItem @table(key: ["order", "product"]) {
+  order: Order!
+  product: Product!
+  quantity: Int!
+  priceAtTimeOfPurchase: Float!
+}
+
+type Review @table(key: ["user", "product"]) {
+  user: User!
+  product: Product!
+  rating: Int!
+  createdAt: Timestamp!
+  comment: String
+}
